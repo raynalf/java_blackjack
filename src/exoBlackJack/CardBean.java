@@ -1,23 +1,31 @@
 package exoBlackJack;
 
 public class CardBean {
-	private int score;
+	private String name;
+	private int value;
 	private String color;
 
-	public int getScore() {
-		return score;
+	public CardBean(String name, int value, String color) {
+		this.name = name;
+		this.value = value;
+		this.color = color;
 	}
 
-	public void setScore(int score) {
-		this.score = score;
+	@Override
+	public String toString() {
+		return "CardBean [name=" + name + ", value=" + value + ", color=" + color + "]";
+	}
+
+	public int getValue() {
+		return value;
 	}
 
 	public String getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	public String getName() {
+		return name;
 	}
 
 }
