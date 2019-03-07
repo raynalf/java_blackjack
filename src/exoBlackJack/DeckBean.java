@@ -1,23 +1,24 @@
 package exoBlackJack;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DeckBean {
-	private List<CardBean> cardDeck;
+public class DeckBean implements Iterable<CardBean> {
+	private List<CardBean> cardList;
 
 	// Constructor
 	public DeckBean() {
-		cardDeck = new LinkedList<>();
-		populateDeck(cardDeck);
+		cardList = new LinkedList<>();
+		populateDeck(cardList);
 		shuffleDeck();
 	}
 
 	// Methods
 
 	public CardBean drawCard() {
-		return cardDeck.remove(1);
+		return cardList.remove(1);
 	}
 
 	private void populateDeck(List<CardBean> cardDeck) {
@@ -30,16 +31,18 @@ public class DeckBean {
 	}
 
 	private void shuffleDeck() {
-		Collections.shuffle(cardDeck);
+		Collections.shuffle(cardList);
+	}
+
+	@Override
+	public Iterator<CardBean> iterator() {
+		return cardList.iterator();
 	}
 
 	// Get + Set
 
 	public List<CardBean> getCardDeck() {
-		return cardDeck;
+		return cardList;
 	}
 
-	public void setCardDeck(List<CardBean> cardDeck) {
-		this.cardDeck = cardDeck;
-	}
 }
