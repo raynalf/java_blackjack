@@ -11,8 +11,12 @@ public class Main {
 
 		GameTable gameTable = new GameTable();
 		gameTable.addPlayerToPlayerList(new Player("Tom"));
+		gameTable.getBank().drawCard(gameTable.getCardDeck().drawCard());
 
-		System.out.println(gameTable.getPlayerList());
+		System.out.println(gameTable.getBank().getPlayerHand().getDrawnCards());
+//		gameTable.getPlayerList().
+//
+//		System.out.println(gameTable.getPlayerList().iterator().next().getPlayerHand().getDrawnCards());
 	}
 
 }

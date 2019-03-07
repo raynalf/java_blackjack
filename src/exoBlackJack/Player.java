@@ -15,7 +15,13 @@ public class Player {
 	}
 
 	// Methods
-	public void drawCard(CardBean card) {
+	@Override
+	public String toString() {
+		return "Player [name=" + name + ", playerHand=" + playerHand + ", score=" + score + ", isDrawingCards="
+				+ isDrawingCards + "]";
+	}
+
+	public void drawCard(Card card) {
 		playerHand.addCardToDrawnCardsList(card);
 	}
 

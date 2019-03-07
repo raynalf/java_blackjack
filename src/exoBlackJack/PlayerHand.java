@@ -1,12 +1,18 @@
 package exoBlackJack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerHand {
-	private List<CardBean> drawnCards;
+	private List<Card> drawnCards;
+
+	// Constructor
+	public PlayerHand() {
+		drawnCards = new ArrayList<>();
+	}
 
 	// Methods
-	public void addCardToDrawnCardsList(CardBean card) {
+	public void addCardToDrawnCardsList(Card card) {
 		drawnCards.add(card);
 	}
 
@@ -15,7 +21,7 @@ public class PlayerHand {
 	}
 
 	// Get + Set
-	public List<CardBean> getDrawnCards() {
+	public List<Card> getDrawnCards() {
 		return drawnCards;
 	}
 

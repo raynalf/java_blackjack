@@ -1,15 +1,17 @@
 package exoBlackJack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameTable {
 	private List<Player> playerList;
-	private DeckBean cardDeck;
+	private Deck cardDeck;
 	private Player bank;
 
 	// Constructor
 	public GameTable() {
-		cardDeck = new DeckBean();
+		playerList = new ArrayList<>();
+		cardDeck = new Deck();
 		bank = new Player("Banque");
 	}
 
@@ -18,6 +20,10 @@ public class GameTable {
 	public void addPlayerToPlayerList(Player player) {
 		playerList.add(player);
 	}
+
+//	public Player getPlayer(Player player) {
+//		return playerList.stream(). forEach(element->element.getName() == player.getName());
+//	}
 
 	// Get + Set
 	public List<Player> getPlayerList() {
@@ -28,11 +34,11 @@ public class GameTable {
 		this.playerList = playerList;
 	}
 
-	public DeckBean getCardDeck() {
+	public Deck getCardDeck() {
 		return cardDeck;
 	}
 
-	public void setCardDeck(DeckBean cardDeck) {
+	public void setCardDeck(Deck cardDeck) {
 		this.cardDeck = cardDeck;
 	}
 

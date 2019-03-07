@@ -5,11 +5,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DeckBean implements Iterable<CardBean> {
-	private List<CardBean> cardList;
+public class Deck implements Iterable<Card> {
+	private List<Card> cardList;
 
 	// Constructor
-	public DeckBean() {
+	public Deck() {
 		cardList = new LinkedList<>();
 		populateDeck(cardList);
 		shuffleDeck();
@@ -17,14 +17,14 @@ public class DeckBean implements Iterable<CardBean> {
 
 	// Methods
 
-	public CardBean drawCard() {
+	public Card drawCard() {
 		return cardList.remove(1);
 	}
 
-	private void populateDeck(List<CardBean> cardDeck) {
+	private void populateDeck(List<Card> cardDeck) {
 		for (CardValues cardValues : CardValues.values()) {
 			for (CardSuits cardSuits : CardSuits.values()) {
-				final CardBean newCard = new CardBean(cardValues, cardValues.getValue(), cardSuits);
+				final Card newCard = new Card(cardValues, cardValues.getValue(), cardSuits);
 				cardDeck.add(newCard);
 			}
 		}
@@ -35,13 +35,13 @@ public class DeckBean implements Iterable<CardBean> {
 	}
 
 	@Override
-	public Iterator<CardBean> iterator() {
+	public Iterator<Card> iterator() {
 		return cardList.iterator();
 	}
 
 	// Get + Set
 
-	public List<CardBean> getCardDeck() {
+	public List<Card> getCardDeck() {
 		return cardList;
 	}
 

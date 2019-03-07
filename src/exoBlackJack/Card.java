@@ -1,11 +1,11 @@
 package exoBlackJack;
 
-public class CardBean {
+public class Card {
 	private CardValues name;
 	private int value;
 	private CardSuits color;
 
-	public CardBean(CardValues name, int value, CardSuits color) {
+	public Card(CardValues name, int value, CardSuits color) {
 		this.name = name;
 		this.value = value;
 		this.color = color;
