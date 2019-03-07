@@ -1,11 +1,11 @@
 package exoBlackJack;
 
 public class CardBean {
-	private String name;
+	private CardValues name;
 	private int value;
-	private String color;
+	private CardSuits color;
 
-	public CardBean(String name, int value, String color) {
+	public CardBean(CardValues name, int value, CardSuits color) {
 		this.name = name;
 		this.value = value;
 		this.color = color;
@@ -20,11 +20,11 @@ public class CardBean {
 		return value;
 	}
 
-	public String getColor() {
+	public CardSuits getColor() {
 		return color;
 	}
 
-	public String getName() {
+	public CardValues getName() {
 		return name;
 	}
 

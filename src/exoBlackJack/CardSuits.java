@@ -1,5 +1,5 @@
 package exoBlackJack;
 
-public enum CardColors {
+public enum CardSuits {
 	Club, Diamond, Heart, Spade;
 }

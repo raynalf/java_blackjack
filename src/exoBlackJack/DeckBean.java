@@ -7,6 +7,7 @@ import java.util.List;
 public class DeckBean {
 	private List<CardBean> cardDeck;
 
+	// Constructor
 	public DeckBean() {
 		cardDeck = new LinkedList<>();
 		populateDeck(cardDeck);
@@ -21,8 +22,9 @@ public class DeckBean {
 
 	private void populateDeck(List<CardBean> cardDeck) {
 		for (CardValues cardValues : CardValues.values()) {
-			for (CardColors cardColors : CardColors.values()) {
-				cardDeck.add(new CardBean(cardValues.toString(), cardValues.getValue(), cardColors.toString()));
+			for (CardSuits cardSuits : CardSuits.values()) {
+				final CardBean newCard = new CardBean(cardValues, cardValues.getValue(), cardSuits);
+				cardDeck.add(newCard);
 			}
 		}
 	}
