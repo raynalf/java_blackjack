@@ -7,6 +7,7 @@ public class GameTable {
 	private List<Player> playerList;
 	private Deck cardDeck;
 	private Player bank;
+	private Player currentPlayer;
 
 	// Constructor
 	public GameTable() {
@@ -36,6 +37,14 @@ public class GameTable {
 
 	public Player getBank() {
 		return bank;
+	}
+
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	public void setCurrentPlayer(Player currentPlayer) {
+		this.currentPlayer = currentPlayer;
 	}
 
 }

@@ -21,6 +21,7 @@ public class Controller {
 			}
 			gameTable.getBank().drawCard(getCard());
 		}
+		gameTable.setCurrentPlayer(getNextPlayer());
 	}
 
 	public Card getCard() {
@@ -34,21 +35,27 @@ public class Controller {
 
 	// Display
 	public void displayState() {
-		displayBankHandAndScore();
-		displayEachPlayerHandAndScore();
+		displayHandAndScore(gameTable.getBank());
+		displayHandAndScore(gameTable.getCurrentPlayer());
+
 		System.out.println(gameTable.getCardDeck().getCardList().size());
+//		TODO
+//		user input : Scanner
+//		deal with ace value
+//		
+
 	}
 
-	public void displayEachPlayerHandAndScore() {
-		for (Player player : gameTable.getPlayerList()) {
-			displayScoreAndNumberOfCards(player);
-			displayCardsInHand(player);
-		}
-	}
+//	public void displayEachPlayerHandAndScore() {
+//		for (Player player : gameTable.getPlayerList()) {
+//			displayScoreAndNumberOfCards(player);
+//			displayCardsInHand(player);
+//		}
+//	}
 
-	public void displayBankHandAndScore() {
-		displayScoreAndNumberOfCards(gameTable.getBank());
-		displayCardsInHand(gameTable.getBank());
+	public void displayHandAndScore(Player player) {
+		displayScoreAndNumberOfCards(player);
+		displayCardsInHand(player);
 	}
 
 	public void displayCardsInHand(Player player) {
