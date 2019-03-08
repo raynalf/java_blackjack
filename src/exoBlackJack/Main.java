@@ -1,22 +1,17 @@
 package exoBlackJack;
 
 public class Main {
-
 	public static void main(String[] args) {
-//		DeckBean deckBean = new DeckBean();
-//
-//		for (CardBean currentCard : deckBean) {
-//			System.out.println(currentCard);
-//		}
 
-		GameTable gameTable = new GameTable();
-		gameTable.addPlayerToPlayerList(new Player("Tom"));
-		gameTable.getBank().drawCard(gameTable.getCardDeck().drawCard());
+		Controller controller = new Controller();
 
-		System.out.println(gameTable.getBank().getPlayerHand().getDrawnCards());
-//		gameTable.getPlayerList().
-//
-//		System.out.println(gameTable.getPlayerList().iterator().next().getPlayerHand().getDrawnCards());
+		controller.addPlayer(new Player("Tom"));
+		controller.addPlayer(new Player("Bob"));
+		controller.addPlayer(new Player("Lynn"));
+
+		controller.gameInit();
+
+		controller.displayState();
 	}
 
 }

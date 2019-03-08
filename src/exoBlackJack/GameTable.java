@@ -21,10 +21,6 @@ public class GameTable {
 		playerList.add(player);
 	}
 
-//	public Player getPlayer(Player player) {
-//		return playerList.stream(). forEach(element->element.getName() == player.getName());
-//	}
-
 	// Get + Set
 	public List<Player> getPlayerList() {
 		return playerList;
@@ -38,15 +34,8 @@ public class GameTable {
 		return cardDeck;
 	}
 
-	public void setCardDeck(Deck cardDeck) {
-		this.cardDeck = cardDeck;
-	}
-
 	public Player getBank() {
 		return bank;
 	}
 
-	public void setBank(Player bank) {
-		this.bank = bank;
-	}
 }

@@ -20,9 +20,26 @@ public class PlayerHand {
 		return drawnCards.size();
 	}
 
+	public int getScore() {
+		int score = 0;
+
+		for (Card card : drawnCards) {
+			score += card.getValue();
+		}
+		return score;
+	}
+
 	// Get + Set
 	public List<Card> getDrawnCards() {
 		return drawnCards;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder cardsInHand = new StringBuilder();
+
+		drawnCards.forEach(card -> cardsInHand.append(card + "\n"));
+		return cardsInHand.toString();
 	}
 
 }

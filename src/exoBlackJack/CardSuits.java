@@ -1,5 +1,5 @@
 package exoBlackJack;
 
 public enum CardSuits {
-	Club, Diamond, Heart, Spade;
+	Clubs, Diamonds, Hearts, Spades;
 }

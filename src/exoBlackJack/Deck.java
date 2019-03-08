@@ -11,21 +11,25 @@ public class Deck implements Iterable<Card> {
 	// Constructor
 	public Deck() {
 		cardList = new LinkedList<>();
-		populateDeck(cardList);
+		populateDeck();
 		shuffleDeck();
 	}
 
 	// Methods
 
-	public Card drawCard() {
-		return cardList.remove(1);
+	public Card drawCard() throws NoMoreCardsInDeckException {
+		try {
+			return cardList.remove(0);
+		} catch (Exception e) {
+			throw new NoMoreCardsInDeckException(e);
+		}
 	}
 
-	private void populateDeck(List<Card> cardDeck) {
+	private void populateDeck() {
 		for (CardValues cardValues : CardValues.values()) {
 			for (CardSuits cardSuits : CardSuits.values()) {
 				final Card newCard = new Card(cardValues, cardValues.getValue(), cardSuits);
-				cardDeck.add(newCard);
+				cardList.add(newCard);
 			}
 		}
 	}
@@ -41,7 +45,7 @@ public class Deck implements Iterable<Card> {
 
 	// Get + Set
 
-	public List<Card> getCardDeck() {
+	public List<Card> getCardList() {
 		return cardList;
 	}
 

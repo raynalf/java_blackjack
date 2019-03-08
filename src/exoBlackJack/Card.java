@@ -13,7 +13,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "CardBean [name=" + name + ", value=" + value + ", color=" + color + "]";
+		return name + "(" + value + ")" + " of " + color;
 	}
 
 	public int getValue() {
