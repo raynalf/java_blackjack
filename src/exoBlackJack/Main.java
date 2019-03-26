@@ -3,15 +3,15 @@ package exoBlackJack;
 public class Main {
 	public static void main(String[] args) {
 
-		Controller controller = new Controller();
+		GameManager gameManager = new GameManager();
 
-		controller.addPlayer(new Player("Tom"));
-		controller.addPlayer(new Player("Bob"));
-		controller.addPlayer(new Player("Lynn"));
+		gameManager.addPlayer(new Player("Tom"));
+		gameManager.addPlayer(new Player("Bob"));
+		gameManager.addPlayer(new Player("Lynn"));
 
-		controller.gameInit();
+		gameManager.gameInit();
 
-		controller.displayState();
+		gameManager.displayState();
 	}
 
 }

@@ -1,11 +1,10 @@
 package exoBlackJack;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Deck implements Iterable<Card> {
+public class Deck {
 	private List<Card> cardList;
 
 	// Constructor
@@ -36,11 +35,6 @@ public class Deck implements Iterable<Card> {
 
 	private void shuffleDeck() {
 		Collections.shuffle(cardList);
-	}
-
-	@Override
-	public Iterator<Card> iterator() {
-		return cardList.iterator();
 	}
 
 	// Get + Set

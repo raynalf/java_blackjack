@@ -2,12 +2,12 @@ package exoBlackJack;
 
 import java.util.Iterator;
 
-public class Controller {
+public class GameManager {
 	private GameTable gameTable;
 	private Iterator<Player> playerList;
 
 	// Constructor
-	public Controller() {
+	public GameManager() {
 		gameTable = new GameTable();
 	}
 
@@ -33,6 +33,14 @@ public class Controller {
 		return null;
 	}
 
+	public void addPlayer(Player player) {
+		gameTable.addPlayerToPlayerList(player);
+	}
+
+	public Player getNextPlayer() {
+		return playerList.next();
+	}
+
 	// Display
 	public void displayState() {
 		displayHandAndScore(gameTable.getBank());
@@ -42,7 +50,7 @@ public class Controller {
 //		TODO
 //		user input : Scanner
 //		deal with ace value
-//		
+//
 
 	}
 
@@ -68,14 +76,6 @@ public class Controller {
 		int score = player.getPlayerHand().getScore();
 		int numberOfCardsInHand = player.getPlayerHand().getNumberOfCardsDrawn();
 		System.out.println(name + " -> score : " + score + "\n-> cards in hand : " + numberOfCardsInHand);
-	}
-
-	public void addPlayer(Player player) {
-		gameTable.addPlayerToPlayerList(player);
-	}
-
-	public Player getNextPlayer() {
-		return playerList.next();
 	}
 
 	// Get + Set
